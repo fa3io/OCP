@@ -5,11 +5,11 @@ public class FormatadoresDeString {
 	public static void main(String[] args) {
 		
 		/* CARACTERES DE ESCAPE
-		\n	Nova linha. Posiciona o cursor de tela no inÌcio da prÛxima linha
-		\t	TabulaÁ„o horizontal. Move o cursor de tela para a prÛxima parada de tabulaÁ„o.
-		\r	Posiciona o cursor da tela no inÌcio da linha atual - n„o avanÁa para a prÛxima linha. Qualquer saÌda de caracteres gerada depois de algum retorno j· gerado È sobrescrito os caracteres anteriores gerados na linha atual.
+		\n	Nova linha. Posiciona o cursor de tela no in√≠cio da pr√≥xima linha
+		\t	Tabula√ß√£o horizontal. Move o cursor de tela para a pr√≥xima parada de tabula√ß√£o.
+		\r	Posiciona o cursor da tela no in√≠cio da linha atual - n√£o avan√ßa para a pr√≥xima linha. Qualquer sa√≠da de caracteres gerada depois de algum retorno j√° gerado √© sobrescrito os caracteres anteriores gerados na linha atual.
 		\\	Barras invertidas. Utilizada para imprimir um caractere de barra invertida.
-		\î	Aspas duplas. Utilizada para imprimir um caractere de aspas duplas. Exemplo, System.out.println(ì\îaspas\îî); exibe ìaspasî
+		\‚Äù	Aspas duplas. Utilizada para imprimir um caractere de aspas duplas. Exemplo, System.out.println(‚Äú\‚Äùaspas\‚Äù‚Äù); exibe ‚Äúaspas‚Äù
 		 */
 		
 		/*
@@ -18,14 +18,14 @@ public class FormatadoresDeString {
 		 d	 	    A decimal integer.
 		 f	 	    A float.
 		 n	 	    A new line character appropriate to the platform running the application. You should always use %n, rather than \n.
-		 tB	 	    A date & time conversionólocale-specific full name of month.
-		 td, te	 	A date & time conversionó2-digit day of month. td has leading zeroes as needed, te does not.
-		 ty, tY	 	A date & time conversionóty = 2-digit year, tY = 4-digit year.
-		 tl	 	    A date & time conversionóhour in 12-hour clock.
-		 tM	 	    A date & time conversionóminutes in 2 digits, with leading zeroes as necessary.
-		 tp	 	    A date & time conversionólocale-specific am/pm (lower case).
-		 tm	 	    A date & time conversionómonths in 2 digits, with leading zeroes as necessary.
-		 tD	 	    A date & time conversionódate as %tm%td%ty
+		 tB	 	    A date & time conversion‚Äîlocale-specific full name of month.
+		 td, te	 	A date & time conversion‚Äî2-digit day of month. td has leading zeroes as needed, te does not.
+		 ty, tY	 	A date & time conversion‚Äîty = 2-digit year, tY = 4-digit year.
+		 tl	 	    A date & time conversion‚Äîhour in 12-hour clock.
+		 tM	 	    A date & time conversion‚Äîminutes in 2 digits, with leading zeroes as necessary.
+		 tp	 	    A date & time conversion‚Äîlocale-specific am/pm (lower case).
+		 tm	 	    A date & time conversion‚Äîmonths in 2 digits, with leading zeroes as necessary.
+		 tD	 	    A date & time conversion‚Äîdate as %tm%td%ty
  		 
  		 FLAG
  		 
@@ -40,16 +40,18 @@ public class FormatadoresDeString {
 		/* IMPORTANTE
 			%[indice$][flags][width][.precision]conversion char
 			
-			se o indice n„o for colocado ele segue a order natural
+			se o indice n√£o for colocado ele segue a order natural
 		*/
 		
-		//Metodo printf() È usado para exibir dados formatados no console f e de formatted
+		//Metodo printf() √© usado para exibir dados formatados no console f e de formatted
 		 System.out.printf("%1$s %2$s %s \n", "A", "B", "C");
 		 
 		 String fabio = "Fabio", flavio = "Flavio", luiz = "Luiz";
 		 
-		 //Foi especificado 2 indices o terceiro n„o ent„o ele volta no 1∫ indice natural
-		 System.out.printf("Filho: %1$s , %2$s Pai: %s ", fabio,flavio,luiz);
+		 /*Temos dois indices um implicito e o explicito que n√£o afeta o implicito por isso imprime Fabio duas vezes
+		 	ele usou o explicito %1$ mas n√£o alterou o implicitou que continuou com o indice 1 imprimindo Fabio e mudando o indice para 2
+		 */
+		 System.out.printf("Filho: %1$s , %s Pai: %s ", fabio,flavio,luiz);
 		 
 		 
 		 
