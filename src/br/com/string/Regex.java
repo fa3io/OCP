@@ -1,5 +1,8 @@
 package br.com.string;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Regex {
 
 	public static void main(String[] args) {
@@ -21,11 +24,16 @@ public class Regex {
 		 
 		 .      Qualquer caractere
 		 \d     Digitos[0-9]
-		 \D		n„o digitos [^0-9]
-		 \s		espaÁos [\t\n\x0B\f\r]
-		 \S		nao espaÁos
+		 \D		n√£o digitos [^0-9]
+		 \s		espa√ßos [\t\n\x0B\f\r]
+		 \S		nao espa√ßos
 		 \w		letras[a-zA-Z_0-9]
-		 \W		n„o È letra
+		 \W		n√£o √© letra
+		 \b		Caracter de palavra no come√ßo da string ou no final da string ou no meio entre um caractere de palavra (\w)
+		  		e um caractere que n√£o √© de palavra (\W)
+		  		*Caractere de palvra e um caractere que pode-se formar uma frase com o mesmo
+		 
+		 \B		Busca caracteres que n√£o s√£o de palavra
 		 */
 		System.out.println("########## METACARACTERES ##########");
 		System.out.println("F".matches("\\w"));
@@ -37,13 +45,14 @@ public class Regex {
 		System.out.println("A".matches("\\d"));
 		System.out.println("8".matches("\\W"));
 		System.out.println("".matches("."));
+		System.out.println("Fabio".matches("\\bF.*"));
 		
 		
 		/* QUANTIFICADORES
 		
 		 x{n}		X,exatamente n vezes
 		 x{n,}		X,pelo menos n vezes
-		 x{n,m}		X,pelo menos n vezes e n„o mais de m vezes
+		 x{n,m}		X,pelo menos n vezes e n√£o mais de m vezes
 		 x?			X,0 ou 1 vez
 		 x*			X,0 ou + vezes
 		 x+			X,1 ou + vezes
@@ -71,23 +80,43 @@ public class Regex {
 		
 		System.out.println("Fabio Santos Alves".matches("^F.*"));
 		System.out.println("Rosalina".matches("^R\\w{6}a$"));
-		
-		
+		System.out.println("LuizSilva".matches("^L.*Silva|Alves"));
+		System.out.println("Marta".matches("M.*ta$"));
 		
 		/*AGRUPADORES
 		 
 		 [...]				Agrupamento de caracteres
-		 [a-z]				Alcance ou intervalo entre a atÈ z
-		 [a-e][i-u]			Uni„o entre a atÈ e e entre i atÈ u
-		 [a-z&&[aeiou]]		InterseÁ„o entre a atÈ z mais as vogais aeiou
-		 [^abc]				ExceÁ„o tudo menos abc
-		 [a-z&&[^m-p]]		SubtraÁ„o entre a atÈ z menos de m atÈ p
-		 \x					Fuga literal
+		 [a-z]				Alcance ou intervalo entre a at√© z
+		 [a-e][i-u]			Uni√£o entre a at√© e e entre i at√© u
+		 [a-z&&[aeiou]]		Interse√ß√£o entre a at√© z mais as vogais aeiou (comum entre os dois)
+		 [^abc]				Exce√ß√£o tudo menos abc
+		 [a-z&&[^m-p]]		Subtra√ß√£o entre a at√© z menos de m at√© p
+		 \x					Fuga literal para usar o caractere propriamente dito
+		 
 		 */
 		
 		System.out.println("########## AGRUPADORES ##########");
 		
-
+		System.out.println("Flavio".matches("Fl[ao]vio"));
+		System.out.println("3227-5350".matches("[0-9]{4}-[0-9]{4}"));
+		System.out.println("3210-3300".matches("[0-9&&[0123]]+-\\d{4}"));
+		System.out.println("olho".matches("[^a]lho"));
+		System.out.println("3210-3300".matches("[0-9&&[^4-9]]+-[0-9&&[^4-9]]+"));
+		
+		System.out.println("########## Classe Pattern e Matcher ##########");
+		
+		Pattern pattern = Pattern.compile("java", Pattern.CASE_INSENSITIVE);
+		String frase = "Java linguagem moderna de programa√ß√£o, o jAva tem dominado o desenvolvimento Web, o jaVa n√£o √© t√£o bom para desenvolvimento Desktop mas o javA √© otimo!";
+		
+		Matcher matcher = pattern.matcher(frase);
+		
+		
+		while (matcher.find()) {
+			System.out.println("Inicio: "+ matcher.start()+" Palavra: "+matcher.group());
+		}
+		
+		
+		
 	}
 
 }
