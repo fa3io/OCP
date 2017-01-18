@@ -9,7 +9,7 @@ class FabioRunTimeException extends RuntimeException{
 	private static final long serialVersionUID = -6613706256550861151L;
 }
 
-public class Exeções {
+public class Execoes {
 
 	public static void main(String[] args) {
 		

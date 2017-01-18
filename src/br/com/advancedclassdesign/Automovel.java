@@ -17,17 +17,17 @@ public enum Automovel implements Serializable{
 	TRICICLO("TRICICLO");
 	
 	
-	private String descrição;
+	private String descricao;
 	
 	private Automovel(String descricao){
-		this.descrição = descricao;
+		this.descricao = descricao;
 	}
 	
-	private Automovel(){// É possivel ter varios construtores no enum
+	private Automovel(){// Eh possivel ter varios construtores no enum
 	}
 	
 	public String getDescricao(){
-		return descrição;
+		return descricao;
 	}
 	
 	@Override
