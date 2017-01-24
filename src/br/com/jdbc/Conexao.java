@@ -18,7 +18,7 @@ public class Conexao {
 			//connectionHSQL = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/ocp", "SA", "");
 			//connectionSQLServer = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=ocp;user=root;password=admin;");
 			
-			System.out.println("Conexão efetuada com sucesso!!");
+			System.out.println("Conexao efetuada com sucesso!!");
 			
 			connectionMySQL.close();
 			//connectionHSQL.close();
