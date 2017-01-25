@@ -15,6 +15,7 @@ public class TesteLocalizacao {
 		//1ª - Construtores
 		Locale pt = new Locale("pt");
 		Locale pt_BR = new Locale("pt", "BR");
+		Locale fb_FB = new Locale("fb", "FB");// Localidade não existe
 		Locale pt_BR_variant = new Locale("pt", "BR","");
 		
 		//pt - Language (Linguagem) da localidade sempre em minusculo
@@ -33,14 +34,14 @@ public class TesteLocalizacao {
 		Locale LOCALE_USADO = pt_BR_variant;
 		
 		Locale localMaquina = Locale.getDefault(); // Retorna o locale da maquina virtual
-		System.out.println(localMaquina);
+		System.out.println("Locale da Maquina: " + localMaquina);
 
 	    Calendar agora = Calendar.getInstance();// vamos obter a data e hora atual
 
 	    // vamos formatar de acordo com o formato de data longa no português brasileiro
 	    DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, LOCALE_USADO);
 
-	    System.out.println(dateFormat.format(agora.getTime())); // vamos exibir o resultado 
+	    System.out.println("Data Formatada com Locale(\"pt\", \"BR\") " + dateFormat.format(agora.getTime())); // vamos exibir o resultado 
 		
 		BigDecimal valor = new BigDecimal("2500.59");
 		NumberFormat numberFormat = NumberFormat.getInstance(LOCALE_USADO);
