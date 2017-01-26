@@ -12,6 +12,7 @@ public class Collections {
 	
 	public static void main(String[] args) {
 		
+		 //Não se pode incluir nullo nem na chave e nem no valor 
 		 ConcurrentMap<String, Object> concurrentMap = new ConcurrentHashMap<>();
 		 
 		 String key = "Fabio";
@@ -87,6 +88,8 @@ public class Collections {
 		  *  O iterador não irá refletir adições, remoções ou alterações na lista desde que o iterador foi criado. 
 		  *  As operações de alteração de elementos nos próprios iteradores (remover, definir e adicionar) não são suportadas. 
 		  *  Esses métodos lançar UnsupportedOperationException
+		  *  
+		  *  Pode-se incluir nulo nos elementos
 		  * 
 		  */
 		 
