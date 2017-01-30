@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 
 /**
- * Classe Mostrando os diferentes tipos de uso de instruções em banco de dados 
+ * Classe Mostrando os diferentes tipos de uso de instruï¿½ï¿½es em banco de dados 
  * 
  * @author Fabio Santos Alves
  *
@@ -22,7 +22,7 @@ public class TesteJDBCInsert {
 		Connection connectionMySQL = null;
 		try {
 
-			connectionMySQL = Conexao.obterConexão(TipoConexao.TRES_STRINGS);
+			connectionMySQL = Conexao.obterConexao(TipoConexao.TRES_STRINGS);
 
 			connectionMySQL.setAutoCommit(false);
 			

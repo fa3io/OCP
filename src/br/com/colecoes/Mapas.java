@@ -32,8 +32,14 @@ public class Mapas {
 		concurrentHashMap.put(null, null);
 		
 		
+		//inserção de null
+		//concurrentHashMap.put(null, null);
 		
+		hashMap.put(null, "Chave nula");
+		hashMap.put(null, "Fabio nula");
+		//treehMap.put(null, null);
 		
+		System.out.println("Chave nulla"+hashMap.get(null));
 		
 		
 	}

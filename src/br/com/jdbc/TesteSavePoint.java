@@ -8,9 +8,9 @@ import java.sql.Statement;
 
 
 /**
- * Save point podem ser usados para recuperar-mos parte de uma transação  ou usar o roolback para voltar para uma ponto da transacao em especifico
- * Temos obrigatoriamente  de settar o autocommit para false, pois se ele for true teremos um erro em runtime ele não encontrará o save pont
- * @author Fábio
+ * Save point podem ser usados para recuperar-mos parte de uma transaï¿½ï¿½o  ou usar o roolback para voltar para uma ponto da transacao em especifico
+ * Temos obrigatoriamente  de settar o autocommit para false, pois se ele for true teremos um erro em runtime ele nï¿½o encontrarï¿½ o save pont
+ * @author Fï¿½bio
  *
  */
 public class TesteSavePoint {
@@ -19,7 +19,7 @@ public class TesteSavePoint {
 		Connection connectionMySQL = null;
 		Savepoint savePoint = null;
 		try {
-			connectionMySQL = Conexao.obterConexão(TipoConexao.UMA_STRING_UM_PROPERTIE);
+			connectionMySQL = Conexao.obterConexao(TipoConexao.UMA_STRING_UM_PROPERTIE);
 			connectionMySQL.setAutoCommit(false);//Desabilitando o autoCommit podemos ter varias instrucoes em uma trnsacao
 
 			System.out.println("----------Efetuando INSERT 1 ----------");

@@ -19,7 +19,7 @@ public class Tokens {
 		 StringTokenizer tokens = new StringTokenizer("aa a aaaa", "a");
 		 System.out.println(tokens.countTokens());
 	
-		 while (tokens.hasMoreTokens()) {
+		 while (st.hasMoreTokens()) {
 			 System.out.println(tokens.nextToken());
 		 }
 		

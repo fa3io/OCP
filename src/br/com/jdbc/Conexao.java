@@ -31,7 +31,7 @@ public class Conexao {
 	
 		
 		try {
-			connectionMySQL =  obterConexão(TipoConexao.UMA_STRING_UM_PROPERTIE);
+			connectionMySQL =  obterConexao(TipoConexao.UMA_STRING_UM_PROPERTIE);
 			
 			
 			System.out.println("Conexao efetuada com sucesso!!");
@@ -45,14 +45,14 @@ public class Conexao {
 	}
 
 	/**
-	 * Existem 3 maneiras de conseguir uma conexão com o metodo getConnection da Classe DriverManager
-	 * São exemplificados abaixo
+	 * Existem 3 maneiras de conseguir uma conexï¿½o com o metodo getConnection da Classe DriverManager
+	 * Sï¿½o exemplificados abaixo
 	 * 
 	 * @param tipo
 	 * @return
 	 * @throws SQLException
 	 */
-	public  static Connection obterConexão(TipoConexao tipo) throws SQLException {
+	public  static Connection obterConexao(TipoConexao tipo) throws SQLException {
 		Connection connection = null;
 		Properties propriedades = new Properties();
 		propriedades.setProperty("user", "root");

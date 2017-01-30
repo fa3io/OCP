@@ -20,12 +20,12 @@ public class TesteClassesInternas {
 		//Obtendo dados da classe local 
 		System.out.println(externa.getClasselocal());
 		
-							//Pdemos criar classes anonimas também mas estas não podem ser estaticas
+							//Pdemos criar classes anonimas tambï¿½m mas estas nï¿½o podem ser estaticas
 		Cloneable clonavel = new Cloneable() {
 			public void clonar(){System.out.println("Clonando");}
 		};
 		
-		//Não é possivel acessar o metodo pois a classe Clonable que é a referencia não possui o metodo
+		//Nï¿½o ï¿½ possivel acessar o metodo pois a classe Clonable que ï¿½ a referencia nï¿½o possui o metodo
 		//clonavel.clonar();
 		
 

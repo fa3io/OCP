@@ -13,7 +13,7 @@ public class TesteJDBCSelect {
 
 		try {
 			
-			Connection connectionMySQL = Conexao.obterConexão(TipoConexao.UMA_STRING_UM_PROPERTIE);
+			Connection connectionMySQL = Conexao.obterConexao(TipoConexao.UMA_STRING_UM_PROPERTIE);
 				
 			System.out.println("-------Imprimindo MetaDados do Banco--------");
 			
@@ -24,7 +24,7 @@ public class TesteJDBCSelect {
 			boolean suportReseultSetScroll = databaseMetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_INSENSITIVE);
 			int maiorVersaoJDBC = databaseMetaData.getJDBCMajorVersion();
 			
-			System.out.println("Funções do Banco: " + numericFunctions);
+			System.out.println("Funï¿½ï¿½es do Banco: " + numericFunctions);
 			System.out.println("Maior Versao JDBC: " + maiorVersaoJDBC );
 			System.out.println("Suporte a ResultSet Scrool: " + suportReseultSetScroll );
 			

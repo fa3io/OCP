@@ -20,15 +20,15 @@ import com.sun.rowset.JdbcRowSetImpl;
  * 
  * Existem dois tipos de RowSet:
  * 
- * + RowSet conectado: A conexão com a fonte de dados é mantida por todo ciclo de vida do RowSet
- * + RowSet desconectado: A conexão pode ser fechado durante o ciclo de vida, 
- * 							mas para recuperar ou atualizar dados é necessário restabelecer a conexão.
+ * + RowSet conectado: A conexï¿½o com a fonte de dados ï¿½ mantida por todo ciclo de vida do RowSet
+ * + RowSet desconectado: A conexï¿½o pode ser fechado durante o ciclo de vida, 
+ * 							mas para recuperar ou atualizar dados ï¿½ necessï¿½rio restabelecer a conexï¿½o.
  */
 public class RowSets {
 
 	public static void main(String[] args) {
 		
-		try(Connection connectionMySQL = Conexao.obterConexão(TipoConexao.UMA_STRING_UM_PROPERTIE);){
+		try(Connection connectionMySQL = Conexao.obterConexao(TipoConexao.UMA_STRING_UM_PROPERTIE);){
 			
 			System.out.println("------- Trabalhando com RowSetFactory/CachedRowSet --------");
 			
@@ -46,19 +46,19 @@ public class RowSets {
 			 * Tipos de RowSets existentes
 			 */
 			
-			//JdbcRowSet é uma implementação de Rowset conectada necessario conexao para utilizar
+			//JdbcRowSet ï¿½ uma implementaï¿½ï¿½o de Rowset conectada necessario conexao para utilizar
 			JdbcRowSet jdbcRowSet = rowSetFactory.createJdbcRowSet();
 			
-			//CachedRowSet  é apenas um Rowset desconectado.
+			//CachedRowSet  ï¿½ apenas um Rowset desconectado.
 			CachedRowSet cachedRowSet = rowSetFactory.createCachedRowSet();
 			
-			//WebRowSet é um CachedRowSet que sabe como transformar seus resultados em XML e retornar, extends CachedRowSet
+			//WebRowSet ï¿½ um CachedRowSet que sabe como transformar seus resultados em XML e retornar, extends CachedRowSet
 			WebRowSet webRowSet = rowSetFactory.createWebRowSet();
 			
-			//FilteredRowSet eh um WebRowSet dados podem ser filtrados. É necessário implementar a inteface Predicate com o método evaluate que 
+			//FilteredRowSet eh um WebRowSet dados podem ser filtrados. ï¿½ necessï¿½rio implementar a inteface Predicate com o mï¿½todo evaluate que 
 			FilteredRowSet filteredRowSet = rowSetFactory.createFilteredRowSet();
 			
-			//JoinRowSet eh um WebRowSet que também sabe como formar o equivalente a um SQL JOIN sem ter que se conectar novamente ao banco de dados.
+			//JoinRowSet eh um WebRowSet que tambï¿½m sabe como formar o equivalente a um SQL JOIN sem ter que se conectar novamente ao banco de dados.
 			JoinRowSet joinRowSet = rowSetFactory.createJoinRowSet();
 			
 			
